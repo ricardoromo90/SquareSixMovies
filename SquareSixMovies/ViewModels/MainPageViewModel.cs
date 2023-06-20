@@ -29,7 +29,7 @@ namespace SquareSixMovies.ViewModels
 		public string title;
 
 		[ObservableProperty]
-		public bool _isRefreshing;
+		public bool isRefreshing;
 
 		[ObservableProperty]
 		private ObservableCollection<CategoryMovies> movies;
@@ -49,7 +49,6 @@ namespace SquareSixMovies.ViewModels
 		[RelayCommand]
 		public async Task MovieSelectedAsync(Movie movie)
 		{
-			System.Diagnostics.Debug.WriteLine($"Movie Selected:{movie.Title}");
 			var movieDetails = await _moviesService.GetMovieDetailsAsync(movie.Id);
 			var popup = new MovieDetailsPage(movieDetails, NavigationService);
 			App.Current.MainPage.ShowPopup(popup);

@@ -9,6 +9,7 @@ namespace SquareSixMovies.Services
 	public class MoviesClient : IMoviesClient
 	{
 		private readonly IMoviesApi _moviesApi;
+
 		public MoviesClient()
 		{
 			var client = new HttpClient() { BaseAddress = new Uri(EndpointDefinitions.BaseUrl) };

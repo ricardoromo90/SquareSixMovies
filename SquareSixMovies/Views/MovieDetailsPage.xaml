@@ -13,7 +13,7 @@
             BackgroundColor="#E04c4c4c"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand"
-            Padding="16,0"
+            Padding="16,10"
             Margin="15"
             HasShadow="False"
             BorderColor="Transparent">

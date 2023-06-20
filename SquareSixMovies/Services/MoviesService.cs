@@ -6,8 +6,8 @@ namespace SquareSixMovies.Services
 {
 	public class MoviesService : IMoviesService
 	{
-		public readonly IMoviesClient _moviesClient;
-		public readonly IMapper _mapper;
+		private readonly IMoviesClient _moviesClient;
+		private readonly IMapper _mapper;
 
 		public MoviesService(
 			IMoviesClient moviesClient,

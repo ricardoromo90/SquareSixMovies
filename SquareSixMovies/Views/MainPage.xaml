@@ -5,16 +5,11 @@
     xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
     xmlns:viewModels="clr-namespace:SquareSixMovies.ViewModels"
     x:Class="SquareSixMovies.Views.Pages.MainPage"
-    ios:Page.UseSafeArea="False"
     NavigationPage.HasNavigationBar="False"
     BackgroundColor="#1A1A1A">
     <Grid
-        IgnoreSafeArea="True"
+        RowDefinitions="Auto,*"
         RowSpacing="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="{OnPlatform 4, iOS=88, Android=44}"/>
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
         <VerticalStackLayout
             Grid.Row="0"
             BackgroundColor="#1A1A1A"

@@ -1,5 +1,5 @@
 ﻿using System;
-using SquareSixMovies.Utils.Utils;
+using SquareSixMovies.Utils.Enums;
 
 namespace SquareSixMovies.Controls
 {

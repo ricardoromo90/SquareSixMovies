@@ -1,5 +1,5 @@
 ﻿using System;
-namespace SquareSixMovies.Utils.Utils
+namespace SquareSixMovies.Utils.Enums
 {
 	public enum StarState
 	{

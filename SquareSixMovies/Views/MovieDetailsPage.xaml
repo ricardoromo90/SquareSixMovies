@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:controls="clr-namespace:SquareSixMovies.Controls"
+    x:Class="SquareSixMovies.Views.MovieDetailsPage"
+    Color="Transparent">
+    <Grid
+        HeightRequest="{Binding PageHeight}"
+        WidthRequest="{Binding PageWidth}">
+        <Frame
+            BackgroundColor="#E04c4c4c"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            Padding="16,0"
+            Margin="15"
+            HasShadow="False"
+            BorderColor="Transparent">
+            <Grid>
+                <ScrollView
+                    VerticalScrollBarVisibility="Never">
+                    <VerticalStackLayout
+                        Spacing="5"
+                        Margin="16,0">
+                        <Frame
+                            IsClippedToBounds="True"
+                            Padding="0"
+                            BorderColor="Transparent"
+                            HasShadow="False"
+                            Margin="0,30,0,12">
+                             <Image
+                                Source="{Binding Movie.Image}"
+                                HeightRequest="534"
+                                Aspect="AspectFill"/>
+                        </Frame>
+                        <Label
+                            Text="{Binding Movie.Title}"
+                            TextColor="White"
+                            FontSize="28"
+                            FontFamily="RobotoMedium"
+                            HorizontalOptions="Start"
+                            Padding="0,0,0,8"/>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span
+                                        Text="Released: "
+                                        TextColor="#A5A5A5"
+                                        FontSize="16"
+                                        FontFamily="RobotoMedium"/>
+                                    <Span
+                                        Text="{Binding Movie.ReleaseDate, StringFormat='{0:mm/dd/yyyy}'}"
+                                        TextColor="White"
+                                        FontSize="16"
+                                        FontFamily="RobotoMedium"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <controls:RatingControl
+                            HorizontalOptions="FillAndExpand"
+                            Amount="5"
+                            CurrentValue="{Binding RateValue}"/>
+                        <Label
+                            Text="{Binding Movie.VoteCount, StringFormat='{0} rating'}"
+                            TextColor="{StaticResource MainPurpleColor}"
+                            FontSize="14"
+                            FontFamily="RobotoMedium"
+                            HorizontalOptions="Start"/>
+                        <Label
+                            Text="{Binding Movie.Overview}"
+                            TextColor="White"
+                            FontSize="14"
+                            FontFamily="RobotoRegular"
+                            HorizontalOptions="Start"
+                            Padding="0,12,0,27"/>
+                        <Grid
+                            ColumnSpacing="29"
+                            ColumnDefinitions=".5*,.5*"
+                            Padding="0,0,0,16">
+                            <Button
+                                Grid.Column="0"
+                                HeightRequest="44"
+                                Text="Back"
+                                TextColor="White"
+                                CornerRadius="10"
+                                FontFamily="RobotoMedium"
+                                BorderColor="{StaticResource MainPurpleColor}"
+                                BorderWidth="3"
+                                Command="{Binding ClosePoupCommand}"
+                                BackgroundColor="Transparent"/>
+                            <Button
+                                Grid.Column="1"
+                                HeightRequest="44"
+                                Text="View Trailer"
+                                TextColor="White"
+                                CornerRadius="10"
+                                FontFamily="RobotoMedium"
+                                Command="{Binding ViewTrailerCommand}"
+                                BackgroundColor="{StaticResource MainPurpleColor}"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Grid>
+        </Frame>
+        <Frame
+            Margin="0,29,25,0"
+            Padding="0"
+            HasShadow="False"
+            IsClippedToBounds="True"
+            BorderColor="Transparent"
+            CornerRadius="12"
+            HorizontalOptions="EndAndExpand"
+            VerticalOptions="StartAndExpand"
+            HeightRequest="24"
+            WidthRequest="24">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding ClosePoupCommand}"/>
+            </Frame.GestureRecognizers>
+            <Image
+                BackgroundColor="{StaticResource MainPurpleColor}"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="StartAndExpand"
+                HeightRequest="24"
+                WidthRequest="24"
+                Source="ic_close"/>
+        </Frame>
+    </Grid>
+</toolkit:Popup>
